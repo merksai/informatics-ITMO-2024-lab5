@@ -76,24 +76,30 @@ brew install git-flow-avh
 git flow version
 ```
 ![](screenshots/3.png)
-2. В корне репозитория инициализируем Git Flow:
-```git flow init```
-3. Создаем ветку для новой функциональности 'task-management':
-```git flow feature start task-management```
-4. Вносим изменения в код для добавления функционала управления задачами, в файл task_manager.py:
+2. В корне репозитория инициализируем Git Flow.
+```
+git flow init
+```
+3. Создаем ветку для новой функциональности 'task-management'.
+```
+git flow feature start task-management
+```
+5. Вносим изменения в код для добавления функционала управления задачами в файл task_manager.py.
 ```
 def create_task(title, description):
     # Логика создания задачи
     print(f"Создана новая задача: {title}")
 ```
-5. Выполняем коммит изменения:
+5. Выполняем коммит изменения.
 ```
 git add task_manager.py
 git commit -m "Добавлен функционал управления задачами"
 ```
-6. После завершения разработки функции завершаем фичу и объединяем ее с основной веткой:
-```git flow feature finish task-management```
-7. Переключаемся на ветку 'develop' и начнинаем создание релиза.
+6. После завершения разработки функции завершаем фичу и объединяем ее с основной веткой.
+```
+git flow feature finish task-management
+```
+8. Переключаемся на ветку 'develop' и начнинаем создание релиза.
 ```
 git checkout develop
 git flow release start v1.0.0
@@ -104,19 +110,25 @@ echo "v1.0.0" > version.txt
 git add version.txt
 git commit -m "Обновлена версия для релиза v1.0.0"
 ```
-9. Завершаем релиз и объединяем его с ветками 'develop' и 'main':
-```git flow release finish v1.0.0```
-10. Создаем hotfix:
-```git flow hotfix start hotfix-1.0.1```
-11. Внесим изменения для исправления ошибки и коммитим.
+9. Завершаем релиз и объединяем его с ветками 'develop' и 'main'.
+```
+git flow release finish v1.0.0
+```
+11. Создаем hotfix.
+```
+git flow hotfix start hotfix-1.0.1
+```
+13. Внесим изменения для исправления ошибки и коммитим.
 ```
 nano file_with_error.py
 git add file_with_error.py
 git commit -m "Исправлена критическая ошибка"
 ```
-12. Завершаем hotfix и объединяем его с ветками 'develop' и 'main':
-```git flow hotfix finish hotfix-1.0.1```
-13. Отправляем изменения на удаленный репозиторий.
+12. Завершаем hotfix и объединяем его с ветками 'develop' и 'main'.
+```
+git flow hotfix finish hotfix-1.0.1
+```
+14. Отправляем изменения на удаленный репозиторий.
 ```
 git push origin feedback
 git push origin develop
